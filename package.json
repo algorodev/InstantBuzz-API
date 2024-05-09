@@ -1,0 +1,17 @@
+{
+  "name": "instantbuzz-api",
+  "version": "0.0.1",
+  "description": "API for InstantBuzz",
+  "main": "src/app.js",
+  "repository": "https://github.com/algorodev/InstantBuzz-API.git",
+  "author": "Alejandro Gonzalez Romero <me@algorodev.com>",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "4.19.2"
+  }
+}
