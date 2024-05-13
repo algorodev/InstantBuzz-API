@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import express from 'express'
 import { connectDB } from './config/dbConnection.js'
 import User from './models/User.js'
+import Chat from './models/Chat.js'
 
 dotenv.config()
 
@@ -24,6 +25,17 @@ app.post('/users', async (req, res) => {
 	try {
 		await user.save()
 		res.status(201).send(user)
+	} catch (error) {
+		res.status(500).send(error)
+	}
+})
+
+app.post('/chats', async (req, res) => {
+	const chat = new Chat(req.body)
+
+	try {
+		await chat.save()
+		res.status(201).send(chat)
 	} catch (error) {
 		res.status(500).send(error)
 	}
