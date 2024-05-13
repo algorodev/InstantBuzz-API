@@ -1,6 +1,7 @@
 import cors from 'cors'
 import dotenv from 'dotenv'
 import express from 'express'
+import { connectDB } from './config/dbConnection.js'
 
 dotenv.config()
 
@@ -19,3 +20,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
 	console.log(`Server is running on http://localhost:${PORT}`)
 })
+
+connectDB()
